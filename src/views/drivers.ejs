@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <title>Quản lý lái xe - Map Admin</title>
+    <!-- Custom CSS -->
+    <link href="assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="dist/css/style.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <%- include('partials/preloader') %>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+      data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
+      <!-- ============================================================== -->
+      <!-- Topbar header - style you can find in pages.scss -->
+      <!-- ============================================================== -->
+      <%- include('partials/header') %>
+      <!-- ============================================================== -->
+      <!-- End Topbar header -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <%- include('partials/sidebar') %>
+      <!-- ============================================================== -->
+      <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Page wrapper  -->
+      <!-- ============================================================== -->
+      <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+          <div class="row">
+            <div class="col-8 align-self-center">
+              <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Xin Chào, Hungdn!
+              </h3>
+              <div class="d-flex align-items-center">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb m-0 p-0">
+                    <li class="breadcrumb-item"><a href="/home">Trang chủ</a>
+                    </li>
+                    <li class="breadcrumb-item"><span>Quản lý lái xe</span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div class="col-4 d-flex align-self-center justify-content-end">
+              <a href="/drivers/add" class="btn btn-primary">Thêm lái xe mới</a>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Bins  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table id="zero_config" class="table table-striped table-bordered no-wrap table-hover">
+                      <thead class="bg-primary text-white">
+                        <tr>
+                          <th>#</th>
+                          <th>Latitude</th>
+                          <th>Longitude</th>
+                          <th>Heigth</th>
+                          <th>Weight</th>
+                          <th>Max Weight</th>
+                          <th>Status</th>
+                          <th>More</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>21.234324</td>
+                          <td>104.23423</td>
+                          <td>128</td>
+                          <td>206</td>
+                          <td>320</td>
+                          <td>Half Full</td>
+                          <td>
+                            <!-- Modal 1 -->
+                            <div id="multiple-one" class="modal fade" tabindex="-1" role="dialog"
+                              aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h4 class="modal-title" id="multiple-oneModalLabel">Modal Heading
+                                    </h4>
+                                    <button type="button" class="close" data-dismiss="modal"
+                                      aria-hidden="true">×</button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <h5 class="mt-0">Text in a modal</h5>
+                                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                                    </p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-target="#multiple-two"
+                                      data-toggle="modal" data-dismiss="modal">Next</button>
+                                  </div>
+                                </div><!-- /.modal-content -->
+                              </div><!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal 1 -->
+                            <!-- Modal 2 -->
+                            <div id="multiple-two" class="modal fade" tabindex="-1" role="dialog"
+                              aria-labelledby="multiple-twoModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h4 class="modal-title" id="multiple-twoModalLabel">Modal Heading
+                                    </h4>
+                                    <button type="button" class="close" data-dismiss="modal"
+                                      aria-hidden="true">×</button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <h5 class="mt-0">Text in a modal</h5>
+                                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                                    </p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div><!-- /.modal-content -->
+                              </div><!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal 1 -->
+                            <!-- Modal trigger -->
+                            <button type="button" class="btn btn-primary m-0" data-toggle="modal"
+                              data-target="#multiple-one">More</button>
+                            <!-- /.modal trigger -->
+                            <!-- End Modal -->
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1</td>
+                          <td>21.234324</td>
+                          <td>104.23423</td>
+                          <td>128</td>
+                          <td>206</td>
+                          <td>320</td>
+                          <td>Half Full</td>
+                          <td>
+                            <!-- Modal 1 -->
+                            <div id="multiple-one" class="modal fade" tabindex="-1" role="dialog"
+                              aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h4 class="modal-title" id="multiple-oneModalLabel">Modal Heading
+                                    </h4>
+                                    <button type="button" class="close" data-dismiss="modal"
+                                      aria-hidden="true">×</button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <h5 class="mt-0">Text in a modal</h5>
+                                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                                    </p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-target="#multiple-two"
+                                      data-toggle="modal" data-dismiss="modal">Next</button>
+                                  </div>
+                                </div><!-- /.modal-content -->
+                              </div><!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal 1 -->
+                            <!-- Modal 2 -->
+                            <div id="multiple-two" class="modal fade" tabindex="-1" role="dialog"
+                              aria-labelledby="multiple-twoModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h4 class="modal-title" id="multiple-twoModalLabel">Modal Heading
+                                    </h4>
+                                    <button type="button" class="close" data-dismiss="modal"
+                                      aria-hidden="true">×</button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <h5 class="mt-0">Text in a modal</h5>
+                                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                                    </p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div><!-- /.modal-content -->
+                              </div><!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal 1 -->
+                            <!-- Modal trigger -->
+                            <button type="button" class="btn btn-primary m-0" data-toggle="modal"
+                              data-target="#multiple-one">More</button>
+                            <!-- /.modal trigger -->
+                            <!-- End Modal -->
+                          </td>
+                        </tr>
+                      </tbody>
+                      <tfoot class="bg-primary text-white">
+                        <tr>
+                          <th>#</th>
+                          <th>Latitude</th>
+                          <th>Longitude</th>
+                          <th>Heigth</th>
+                          <th>Weight</th>
+                          <th>Max Weight</th>
+                          <th>Status</th>
+                          <th>More</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bins -->
+        <!-- ============================================================== -->
+      </div>
+      <!-- ============================================================== -->
+      <!-- End Page wrapper  -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <!-- apps -->
+    <script src="dist/js/app-style-switcher.js"></script>
+    <script src="dist/js/feather.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <!-- themejs -->
+    <!--Menu sidebar -->
+    <script src="dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="dist/js/custom.min.js"></script>
+    <!--This page plugins -->
+    <script src="assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="dist/js/pages/datatable/datatable-basic.init.js"></script>
+  </body>
+
+</html>
